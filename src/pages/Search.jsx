@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router";
 import Card from "../components/Card";
-import { div } from "framer-motion/client";
 const SearchResult = () => {
   const [results, setResults] = useState(null);
   const params = useParams();
@@ -40,7 +39,7 @@ const SearchResult = () => {
             </div>
           )}
           
-            <div className="grid grid-cols-4 gap-5">
+            <div className="grid grid-cols-5 gap-6">
               {results?.map((movie, index) => (
                 <Link
                   key={index}

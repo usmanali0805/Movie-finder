@@ -76,95 +76,109 @@ const Movie = () => {
     },
     {
       Title: "The Accountant 2",
-      Poster: "https://i.pinimg.com/236x/23/d0/41/23d041ed9ea67433b8b1f05d1485c034.jpg",
+      Poster:
+        "https://i.pinimg.com/236x/23/d0/41/23d041ed9ea67433b8b1f05d1485c034.jpg",
       Year: "2025",
     },
     {
       Title: "Peaky Blinders",
-      Poster: "https://i.pinimg.com/474x/7a/ab/d6/7aabd6f0920bacdd1cf0ce726358d6fa.jpg",
+      Poster:
+        "https://i.pinimg.com/474x/7a/ab/d6/7aabd6f0920bacdd1cf0ce726358d6fa.jpg",
       Year: "2022",
     },
     {
       Title: "Love Alarm",
-      Poster: "https://i.pinimg.com/236x/7f/56/c4/7f56c4e70324233fb8bb67fa248365f7.jpg",
+      Poster:
+        "https://i.pinimg.com/236x/7f/56/c4/7f56c4e70324233fb8bb67fa248365f7.jpg",
       Year: "2025",
     },
-    
+
     {
       Title: "Alone in Venice",
-      Poster: "https://i.pinimg.com/474x/1d/a3/c9/1da3c9a1fa671acbb62e0dd96ac2753e.jpg",
+      Poster:
+        "https://i.pinimg.com/474x/1d/a3/c9/1da3c9a1fa671acbb62e0dd96ac2753e.jpg",
       Year: "2025",
     },
     {
       Title: "Alto Knights",
-      Poster: "https://i.pinimg.com/236x/6e/86/ca/6e86caa7b5620a3a71af7a3b15375f91.jpg",
+      Poster:
+        "https://i.pinimg.com/236x/6e/86/ca/6e86caa7b5620a3a71af7a3b15375f91.jpg",
       Year: "2025",
     },
     {
       Title: "The Amateur",
-      Poster: "https://m.media-amazon.com/images/M/MV5BMWJhNmFmMjAtYjVmZi00N2QxLWIyMjctOTc5MjUwNjM2MGYxXkEyXkFqcGc@._V1_SX300.jpg",
+      Poster:
+        "https://m.media-amazon.com/images/M/MV5BMWJhNmFmMjAtYjVmZi00N2QxLWIyMjctOTc5MjUwNjM2MGYxXkEyXkFqcGc@._V1_SX300.jpg",
       Year: "2025",
     },
     {
       Title: "A Simple Favor",
-      Poster: "https://i.pinimg.com/474x/b9/bc/74/b9bc74c3d9c872816548c6a5bb79db0f.jpg",
+      Poster:
+        "https://i.pinimg.com/474x/b9/bc/74/b9bc74c3d9c872816548c6a5bb79db0f.jpg",
       Year: "2025",
     },
     {
       Title: "Ash",
-      Poster: "https://m.media-amazon.com/images/M/MV5BOWNhOTUxM2ItMmVjNy00NzZjLTg5NzEtOWZhMTZjNTRhNzViXkEyXkFqcGdeQXVyNDYwMjI1OTY@._V1_SX300.jpg",
+      Poster:
+        "https://m.media-amazon.com/images/M/MV5BOWNhOTUxM2ItMmVjNy00NzZjLTg5NzEtOWZhMTZjNTRhNzViXkEyXkFqcGdeQXVyNDYwMjI1OTY@._V1_SX300.jpg",
       Year: "2025",
     },
     {
       Title: "Back in Action",
-      Poster: "https://i.pinimg.com/474x/af/91/da/af91dabebde0022234ea588e26517f79.jpg",
+      Poster:
+        "https://i.pinimg.com/474x/af/91/da/af91dabebde0022234ea588e26517f79.jpg",
       Year: "2025",
     },
     {
       Title: "The Bad Guys 2",
-      Poster: "https://i.pinimg.com/236x/29/49/71/2949713b3dcdb76a7fe71ef4cb6365d9.jpg",
+      Poster:
+        "https://i.pinimg.com/236x/29/49/71/2949713b3dcdb76a7fe71ef4cb6365d9.jpg",
       Year: "2025",
     },
     {
       Title: "Battlefield 2025",
-      Poster: "https://i.pinimg.com/236x/65/89/8f/65898fa9c6367f6017e6bac72b7b2b37.jpg",
+      Poster:
+        "https://i.pinimg.com/236x/65/89/8f/65898fa9c6367f6017e6bac72b7b2b37.jpg",
       Year: "2025",
     },
     {
       Title: "Bridget Jones: Mad About the Boy",
-      Poster:"https://i.pinimg.com/474x/09/e6/b5/09e6b51224ff44a815466ddf8f09860a.jpg",
+      Poster:
+        "https://i.pinimg.com/474x/09/e6/b5/09e6b51224ff44a815466ddf8f09860a.jpg",
       Year: "2025",
     },
     {
       Title: "Karate Kid: Legends",
-      Poster:"https://i.pinimg.com/474x/93/58/a1/9358a1ebf16ee1248f14abaedcadfce5.jpg",
+      Poster:
+        "https://i.pinimg.com/474x/93/58/a1/9358a1ebf16ee1248f14abaedcadfce5.jpg",
       Year: "2025",
     },
     {
       Title: "Superman ",
-      Poster:"https://i.pinimg.com/236x/8a/78/2d/8a782d308c983d9f5eefba9a5f201cc2.jpg",
+      Poster:
+        "https://i.pinimg.com/236x/8a/78/2d/8a782d308c983d9f5eefba9a5f201cc2.jpg",
       Year: "2025",
     },
   ];
 
   return (
-    <div className="z-50 bg-[#101010] ">
+    <div className="px-10 z-50 bg-[#101010] ">
       <div className=" w-full bg-[#101010] m-auto flex justify-center items-center py-32 gap-5 flex-col">
         <div className="heading h-20 ">
           <h1 className="text-5xl font-bold text-white"> Top Movies</h1>
         </div>
-        <div className="justify-center items-center grid gap-10 grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
+        <div className="justify-center items-center grid gap-4 grid-cols-1 md:grid-cols-3 lg:grid-cols-5">
           {movies.map((serial, index) => {
             return (
               <Link key={index} to={`/${serial.Title}`}>
-                  <Card
-                    movie={{
-                      name: serial.Title,
-                      src: serial.Poster,
-                      year: serial.Year,
-                    }}
-                  />
-                </Link>
+                <Card
+                  movie={{
+                    name: serial.Title,
+                    src: serial.Poster,
+                    year: serial.Year,
+                  }}
+                />
+              </Link>
             );
           })}
         </div>

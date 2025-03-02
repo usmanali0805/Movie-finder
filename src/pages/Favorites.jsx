@@ -10,22 +10,32 @@ const Favorites = () => {
       setLocal(JSON.parse(data));
     }
   }, []);
-  console.log(local);
   const HandleClear = () => {
-    localStorage.clear();
+    localStorage.removeItem("Favorites");
     setLocal([]);
   };
 
+  const onRemoveFavt = (movie) => {
+    const local_new = local.filter((serial) => serial.name !== movie.name);
+    if (local_new) {
+      setLocal(local_new);
+    }
+  };
+
   return (
-    <div className=" w-full bg-[#101010] m-auto h-fit min-h-screen flex justify-center items-center py-32 gap-5 flex-col">
+    <div className="px-10 w-full bg-[#101010] m-auto h-fit min-h-screen flex justify-center items-center py-32 gap-5 flex-col">
       <div className="heading h-20 ">
         <h1 className="text-5xl font-bold text-white">Favorites Movies</h1>
       </div>
-      <div className="justify-center items-center grid gap-10 grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
+      <div className="justify-center items-center grid gap-4 grid-cols-1 md:grid-cols-3 lg:grid-cols-5">
         {local.length > 0 ? (
           local.map((serial, index) => (
-            <Link key={index} to={`/${serial.Title}`}>
-              <Card movie={serial} />
+            <Link key={index} to={`/${serial.name}`}>
+              <Card
+                movie={serial}
+                is_favourite={true}
+                onRemoveFavt={() => onRemoveFavt(serial)}
+              />
             </Link>
           ))
         ) : (
