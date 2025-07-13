@@ -28,7 +28,8 @@ const HomePage = () => {
       Title: "The Batman",
       Year: 2022,
       Poster: "/batmen.jpg",
-    },{
+    },
+    {
       Title: "Inception",
       Poster:
         "https://i.pinimg.com/736x/b0/ae/a4/b0aea49646879a043ad9f6ec3002e99f.jpg",
@@ -55,7 +56,8 @@ const HomePage = () => {
       Title: "The Shawshank Redemption",
       Poster: "https://m.media-amazon.com/images/I/51zUbui+gbL.jpg",
       Year: "1994",
-    }, {
+    },
+    {
       Title: "Fight Club",
       Poster:
         "https://i.pinimg.com/474x/b9/b4/39/b9b43999c5d97b49cfc5cb86331e4815.jpg",
@@ -188,7 +190,7 @@ const HomePage = () => {
       }
       return prev;
     });
-  }
+  };
   const Movemovieleft = () => {
     setSlidermovie((prev) => {
       if (prev < 0) {
@@ -212,110 +214,116 @@ const HomePage = () => {
 
   return (
     <div>
-        <div  className="relative overflow-hidden h-[100vh]">
-          <div className="bg-slider flex justify-center items-center">
-            <div className="absolute z-10 inset-0 bg-black opacity-50"></div>
-            <div className="input-sec h-[70px] absolute w-[40%] m-5 z-20 flex items-center bg-transparent gap-5">
-              <input
-                onChange={Handleinput}
-                type="text"
-                placeholder="Search for a movie..."
-                className=" flex h-full p-2 rounded-md text-gray-800 text-[18px] focus-visible:border-none bg-[white] items-center w-[85%] "
-              />
-              <Link to={`/search/${name}`}>
-                <button
-                  onClick={Handlesearch}
-                  className="search text-2xl text-white h-full p-[15px] bg-red-600 hover:bg-red-700   rounded-lg flex items-center justify-center cursor-pointer"
-                >
-                  Search
-                </button>
-              </Link>
-            </div>
+      <div className="relative overflow-hidden h-[100vh]">
+        <div className="bg-slider flex justify-center items-center">
+          <div className="absolute z-10 inset-0 bg-black opacity-50"></div>
+          <div className="input-sec h-auto absolute w-[80%] sm:w-[40%] m-5 z-20 flex flex-col items-center bg-transparent gap-3">
+            <input
+              onChange={Handleinput}
+              type="text"
+              placeholder="Search for a movie..."
+              className="w-full p-2 rounded-md text-gray-800 text-[18px] focus-visible:border-none bg-white"
+            />
+            <Link to={`/search/${name}`} className="w-fit">
+              <button
+                onClick={Handlesearch}
+                className="search w-full text-2xl text-white p-[8px] sm:p-[15px] bg-red-600 hover:bg-red-700 rounded-lg flex items-center justify-center cursor-pointer"
+              >
+                Search
+              </button>
+            </Link>
           </div>
         </div>
+      </div>
 
-        {/* Movies section */}
-        <div className=" w-full bg-[#101010] h-fit overflow-hidden m-auto flex mb-32 gap-5 flex-col">
-          <div className="heading h-[20vh]  flex items-end justify-center">
-            <h1 className="text-5xl  text-white">Top Rank Movies</h1>
-          </div>
-          <div className="svgs w-full flex items-center justify-end pr-20">
-            <div className="icons w-24 flex gap-5">
-              <div
-                onClick={Movemovieleft}
-                className="left cursor-pointer rounded-full transition-all flex justify-center items-center p-2 hover:bg-gray-500 "
-              >
-                <ChevronLeft className="text-white w-6 h-6" />
-              </div>
-              <div
-                onClick={Movemovieright}
-                className="right cursor-pointer rounded-full flex transition-all justify-center items-center p-2 hover:bg-gray-500 "
-              >
-                <ChevronRight className="text-white" />
-              </div>
+      {/* Movies section */}
+      <div className=" w-full bg-[#101010] h-fit overflow-hidden m-auto flex mb-32 gap-5 flex-col">
+        <div className="heading h-[20vh]  flex items-end justify-center">
+          <h1 className="text-3xl sm:text-5xl text-white text-center">
+            Top Rank Movies
+          </h1>
+        </div>
+        <div className="svgs w-full flex items-center justify-end pr-20">
+          <div className="icons w-24 flex gap-5">
+            <div
+              onClick={Movemovieleft}
+              className="left cursor-pointer rounded-full transition-all flex justify-center items-center p-2 hover:bg-gray-500 "
+            >
+              <ChevronLeft className="text-white w-6 h-6" />
+            </div>
+            <div
+              onClick={Movemovieright}
+              className="right cursor-pointer rounded-full flex transition-all justify-center items-center p-2 hover:bg-gray-500 "
+            >
+              <ChevronRight className="text-white" />
             </div>
           </div>
-          <div className="slider items-start flex gap-12 px-20 transition-transform duration-300"
-           style={{ transform: `translateX(${slidermovie}px)` }}>
-            {movies.map((movie, index) => {
-              return (
-                <Link
-                  key={index}
-                  to={`/${movie.Title.replace(/\s+/g, "-").toLowerCase()}`}
-                >
-                  <Card
-                    movie={{
-                      name: movie.Title,
-                      src: movie.Poster,
-                      year: movie.Year,
-                    }}
-                  />
-                </Link>
-              );
-            })}
-          </div>
         </div>
-        
-        {/* series section */}
-        <div className=" w-full bg-[#101010] h-fit overflow-hidden m-auto flex mb-32 gap-5 flex-col">
-          <div className="heading flex items-center justify-center  h-[0%] ">
-            <h1 className="text-5xl  text-white">Top Rank Series</h1>
-          </div>
-          <div className="svgs w-full flex items-center justify-end pr-20">
-            <div className="icons w-24 flex gap-5">
-              <div
-                onClick={Moveleft}
-                className="left cursor-pointer rounded-full transition-all flex justify-center items-center p-2 hover:bg-gray-500 "
+        <div
+          className="slider items-start flex gap-12 px-20 transition-transform duration-300"
+          style={{ transform: `translateX(${slidermovie}px)` }}
+        >
+          {movies.map((movie, index) => {
+            return (
+              <Link
+                key={index}
+                to={`/${movie.Title.replace(/\s+/g, "-").toLowerCase()}`}
               >
-                <ChevronLeft className="text-white w-6 h-6" />
-              </div>
-              <div
-                onClick={Moveright}
-                className="right cursor-pointer rounded-full flex transition-all justify-center items-center p-2 hover:bg-gray-500 "
-              >
-                <ChevronRight className="text-white" />
-              </div>
+                <Card
+                  movie={{
+                    name: movie.Title,
+                    src: movie.Poster,
+                    year: movie.Year,
+                  }}
+                />
+              </Link>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* series section */}
+      <div className=" w-full bg-[#101010] h-fit overflow-hidden m-auto flex mb-32 gap-5 flex-col">
+        <div className="heading flex items-center justify-center  h-[0%] ">
+          <h1 className="text-3xl sm:text-5xl text-white text-center">
+            Top Rank Series
+          </h1>
+        </div>
+        <div className="svgs w-full flex items-center justify-end pr-20">
+          <div className="icons w-24 flex gap-5">
+            <div
+              onClick={Moveleft}
+              className="left cursor-pointer rounded-full transition-all flex justify-center items-center p-2 hover:bg-gray-500 "
+            >
+              <ChevronLeft className="text-white w-6 h-6" />
+            </div>
+            <div
+              onClick={Moveright}
+              className="right cursor-pointer rounded-full flex transition-all justify-center items-center p-2 hover:bg-gray-500 "
+            >
+              <ChevronRight className="text-white" />
             </div>
           </div>
-          <div
-            className="slider items-start flex gap-12 px-20 transition-transform duration-300"
-            style={{ transform: `translateX(${sliderseri}px)` }}
-          >
-            {series.map((serial, index) => {
-              return (
-                <Link key={index} to={`/${serial.Title}`}>
-                  <Card
-                    movie={{
-                      name: serial.Title,
-                      src: serial.Poster,
-                      year: serial.Year,
-                    }}
-                  />
-                </Link>
-              );
-            })}
-          </div>
         </div>
+        <div
+          className="slider items-start flex gap-12 px-20 transition-transform duration-300"
+          style={{ transform: `translateX(${sliderseri}px)` }}
+        >
+          {series.map((serial, index) => {
+            return (
+              <Link key={index} to={`/${serial.Title}`}>
+                <Card
+                  movie={{
+                    name: serial.Title,
+                    src: serial.Poster,
+                    year: serial.Year,
+                  }}
+                />
+              </Link>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 };

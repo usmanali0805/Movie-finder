@@ -33,23 +33,33 @@ const Poster = () => {
   return (
     <>
       {data && (
-        <>
-          {!data.Poster?<div className="text-white h-screen flex text-2xl justify-center items-center">Loading...</div>:<div className="flex justify-center gap-20 items-center text-amber-50 w-full h-screen">
-            <div className="main w-[45%] h-fit flex flex-col gap-7">
-              <h1 className="text-8xl">{data.Title}</h1>
-              <h3 className="text-xl">{`Actor: ${data.Actors}`}</h3>
-              <h3 className="text-xl">
-                Rating: {data.Ratings?.map((r) => `${r.Source}: ${r.Value}`).join(", ") || "N/A"}
-              </h3>
-              <div className="text-xl">Plot: {data.Plot}</div>
-              <div>Year: {data.Year}</div>
-            </div>
-            <div className="poster rounded-xl overflow-hidden">
-              {data.Poster && <img src={data.Poster} alt="Movie Poster" className="w-96" />}
-            </div>
-          </div>}
-        </>
-      )}
+  <>
+    {!data.Poster ? (
+      <div className="text-white h-screen flex text-2xl justify-center items-center">
+        Loading...
+      </div>
+    ) : (
+      <div className="flex flex-col lg:flex-row justify-center gap-10 items-center text-amber-50 w-full min-h-screen p-4">
+        {/* Poster on top for mobile/tablet */}
+        <div className="poster rounded-xl overflow-hidden">
+          <img src={data.Poster} alt="Movie Poster" className="w-72 sm:w-80 md:w-96" />
+        </div>
+
+        {/* Content below image on small screens, beside it on large */}
+        <div className="main w-full lg:w-[45%] flex flex-col gap-5 text-center lg:text-left">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl">{data.Title}</h1>
+          <h3 className="text-lg sm:text-xl">{`Actor: ${data.Actors}`}</h3>
+          <h3 className="text-lg sm:text-xl">
+            Rating: {data.Ratings?.map((r) => `${r.Source}: ${r.Value}`).join(", ") || "N/A"}
+          </h3>
+          <div className="text-lg sm:text-xl">Plot: {data.Plot}</div>
+          <div className="text-lg sm:text-xl">Year: {data.Year}</div>
+        </div>
+      </div>
+    )}
+  </>
+)}
+
     </>
   );
 };

@@ -25,29 +25,35 @@ const Card = ({movie}) => {
 
   return (
     <>
-      <div className="card cursor-pointer bg-[#272727] rounded-t-[10px] rounded-b-sm  w-[230px] max-h-[450px] h-[450px]   flex flex-col">
-        <div className=" w-full rounded-t-[10px] relative img h-[80%] object-cover overflow-hidden">
-          <div
-            className="p-1 fav rounded-full right-1.5 bg-white absolute z-10 flex justify-center items-center hover:opacity-100"
-            onClick={(event) => {
-              event.preventDefault();
-              AddMovieToFavourite();
-            }}
-          >
-            <Heart className="text-red-500  w-6 h-6" />
-          </div>
-          <img
-            className="w-full img  h-[100%] object-cover "
-            src={movie.src}
-            alt="img"
-          />
-        </div>
-        <h2 className="text-2xl px-3 py-1 poppins-regular text-[red]">
-          {movie.name}
-        </h2>
-        <div className="poppins-ight px-3  text-white">{movie.year}</div>
+  <div className="card cursor-pointer bg-[#272727] rounded-t-[10px] rounded-b-sm w-[230px] h-[450px] flex flex-col">
+    {/* Image Section */}
+    <div className="w-full h-[80%] relative overflow-hidden rounded-t-[10px]">
+      {/* Favourite Button */}
+      <div
+        className="p-1 fav absolute top-1 right-1.5 z-10 bg-white rounded-full flex justify-center items-center hover:opacity-100"
+        onClick={(event) => {
+          event.preventDefault();
+          AddMovieToFavourite();
+        }}
+      >
+        <Heart className="text-red-500 w-6 h-6" />
       </div>
-    </>
+
+      {/* Movie Poster */}
+      <img
+        className="w-full h-full object-cover"
+        src={movie.src}
+        alt={movie.name}
+      />
+    </div>
+
+    {/* Movie Info */}
+    <h2 className="text-xl sm:text-2xl px-3 py-1 text-[red] font-semibold">
+      {movie.name}
+    </h2>
+    <div className="px-3 text-white text-sm sm:text-base">{movie.year}</div>
+  </div>
+</>
   );
 };
 export default Card;
